@@ -258,7 +258,16 @@ public class Ocean {
     }
 
     public boolean isGameOver() {
-        return (hitCount == 20);
+        print();
+        for(int i = 0; i < 10; i++){
+            for(int j = 0; j< 10; j++){
+                if (ships[i][j].getLabelTextAt(i, j) != "X" && ships[i][j].getLabelTextAt(i, j) != "^" && ships[i][j].getLabelTextAt(i, j) != "." ){
+                    return false;                  
+                }   
+            }
+        }
+        return true;
+        
     }
 
     public Ship[][] getShipArray() {
